@@ -3,135 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title> IMPACTA TECNOLOGIA</title>
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
-        p {
-    text-align: justify;
-    text-indent: 50px;    }
-
-    a {
-    text-decoration: none;
-    color: #606060;}
-
-    a:hover {
-    text-decoration: underline;
-    color: #528CE0;}
-
-    body {
-    background-color: grey;
-    color: rgba(0, 0, 0, 1);
-    font-family: Arial,sans-serif;}
-
-    nav#menu ul{
-    list-style: none;
-    text-transform: uppercase;
-    display: block;
-    position: absolute;
-    top: -20px;
-    left: 850px;
-}
-nav#menu li {
-    display: inline-block;
-    background-color: #dddddd;
-    padding: 10px;
-    margin: 2px;
-    transition: background-color 0.5s;
-    transition:
-}
-nav#menu h1{
-    display: none;
-}
-nav#menu li:hover {
-    background-color: #606060;
-}
-nav#menu a {
-    color: black;
-    transition: color 0.4s;
-    text-decoration: none;
-}
-nav#menu a:hover{
-    color: white;
-    text-decoration: underline;
-}
-div#interface {
-    width: 1250px;
-    background-color: #ffffff;
-    margin: -20px auto 0px auto;
-    padding: 10px;
-    box-shadow: none, none, 10px black;
-    border: 5px black;
-}
-header#cabecalho img#icone  {
-    position: absolute;
-    width: 300px;
-    left: 900px;
-    top: 65px;
-}
-header#cabecalho {
-    border-bottom: 1px #606060 solid;
-    height: 150px;
-    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 100px;
-
-}
-header#cabecalho h1 {
-    font-family: FonteLogo, sans-serif;
-    font-size: 30pt;
-    color: #606060;
-    text-shadow: rgba(0,0,0,0.51);
-    margin-bottom: 0px;
-}
-header#cabecalho h2{
-    font-family: 'Titillium Web', sans-serif;
-    color:#808080;
-    font-size: 15pt;
-    text-shadow: black;
-    margin-top: 20px;
-    margin-left: 40px;
-}
-header#cabecalho img#logo {
-    width: 250px;
-    margin-bottom: -20px;
-    margin-left: 30px;
-}
-section#corpo {
-    display: block;
-    width: 760px;
-    float: left;
-    border-right: 1px solid #606060 ;
-    padding: 6px;
-}
-aside#lateral {
-    display: block;
-    width: 450px;
-    float: right;
-    background-color: #dddddd;
-    padding: 6px;
-}
-footer#rodape {
-    clear: both;
-    border-top: 1px solid #606060;
-    margin: 1px;
-}
-footer#rodape p {
-        text-align: center;
-}
-footer#rodape img {
-    width: 25px;
-    margin-top: 3px;
-}
-aside#lateral h1 {
-    font-family: FonteLogo,sans-serif;
-    font-size: 30px;
-    color: #606060;
-    margin-left: 15px;
-}
-aside#lateral h2 {
-    background-color: #606060;
-    color: #ffffff;
-    padding: 0px 0px 0px 63px;
-    font-size:17pt;
-}
-    </style>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <script>
     function mudafoto(foto)
@@ -139,13 +11,13 @@ aside#lateral h2 {
         document.getElementById("icone").src=foto;
     }
 </script>
-    <body>
-<div id="interface">
-<header id="cabecalho">
-    <h1><img id="logo" src="http://www.impacta.com.br/landing-page/como-comprar-loja-virtual/img/logo.png"/></h1>
+<body>
+<div class="interface">
+<header class="cabecalho">
+    <h1><img class="logo" src="http://www.impacta.com.br/landing-page/como-comprar-loja-virtual/img/logo.png"/></h1>
     <h2>PENSE&nbsp;&nbsp; . &nbsp;&nbsp; SEJA&nbsp;&nbsp; . &nbsp;&nbsp;FAÇA </h2>
-    <img id="icone" src="https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg"/>
-    <nav id="menu">
+    <img class="icone" id="icone" src="https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg"/>
+    <nav class="menu">
     <h1>Menu Principal </h1>
     <ul type="1">
         <li onmouseover= "mudafoto('https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg')" onmouseout="mudafoto('https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg')"><a href="index.html">Home</a></li>
@@ -154,7 +26,7 @@ aside#lateral h2 {
     </ul>
     </nav>
     </header>
-<section id="corpo">
+<section class="corpo">
 
 SOBRE A FACULDADE
 
@@ -170,13 +42,14 @@ SOBRE A FACULDADE
 <h1>Certificação reconhecida no mercado</h1>
 <p>Além de certificações de peso internacional, o Grupo Impacta possui no ICS - Impacta Certified Specialist um dos títulos mais respeitados do mercado, preparado sob medida para oferecer e atestar habilidades de profissionais especializados.</p>
 </section>
-<aside id="lateral">
-    LOCALIZAÇÃO:
-Av. Rudge, 315 - Bom Retiro, São Paulo - SP, 01133-000
+<aside class="lateral">
+    <h1>CAMPUS</h1>
+    <iframe width="450" height="315" src="https://www.youtube.com/embed/HM19ZQ-s2Z0?rel=0" frameborder="0" allowfullscreen></iframe>
+<h2>Av. Rudge, 315 - Bom Retiro, São Paulo - SP, 01133-000</h2>
 </aside>
-<footer id="rodape">
+<footer class="rodape">
  <p><i>&copy; 2017 FACULDADE IMPACTA - TODOS OS DIREITOS RESERVADOS </i><br>
- <a href="https://www.facebook.com/FacImpacta/" target="_blank"> <img id="facebook" src="https://assets.lwsite.com.br/uploads/widget_image/image/718/047/718047/facebook_icon3.png"></a> | <a href="https://twitter.com/impacta_oficial" target="_blank"> <img id="twitter" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-logotipo-do--cone-do-twitter-by-vexels.png"></a>
+ <a href="https://www.facebook.com/FacImpacta/" target="_blank"> <img class="facebook" src="https://assets.lwsite.com.br/uploads/widget_image/image/718/047/718047/facebook_icon3.png"></a> | <a href="https://twitter.com/impacta_oficial" target="_blank"> <img class="twitter" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-logotipo-do--cone-do-twitter-by-vexels.png"></a>
 </footer>
 </div>
 </body>

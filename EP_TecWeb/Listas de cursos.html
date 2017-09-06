@@ -3,143 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Lista de cursos</title>
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
-        @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed');
-        @import url('https://fonts.googleapis.com/css?family=Quicksand');
-        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
-        p {
-    text-align: justify;
-    text-indent: 50px;    }
-
-    a {
-    text-decoration: none;
-    color: #606060;
-    }
-
-    a:hover {
-    text-decoration: underline;
-    color: #528CE0;}
-
-    body {
-    background-color: grey;
-    color: rgba(0, 0, 0, 1);
-    font-family: Arial,sans-serif;}
-
-    nav#menu ul{
-    list-style: none;
-    text-transform: uppercase;
-    display: block;
-    position: absolute;
-    top: -20px;
-    left: 850px;
-}
-nav#menu li {
-    display: inline-block;
-    background-color: #dddddd;
-    padding: 10px;
-    margin: 2px;
-    transition: background-color 0.5s;
-    transition:
-}
-nav#menu h1{
-    display: none;
-}
-nav#menu li:hover {
-    background-color: #606060;
-}
-nav#menu a {
-    color: black;
-    transition: color 0.4s;
-    text-decoration: none;
-}
-nav#menu a:hover{
-    color: white;
-    text-decoration: underline;
-}
-div#interface {
-    width: 1250px;
-    background-color: #ffffff;
-    background-image: url("");
-    margin: -20px auto 0px auto;
-    padding: 10px;
-    box-shadow: none, none, 10px black;
-    border: 5px black;
-}
-header#cabecalho img#icone  {
-    position: absolute;
-    width: 300px;
-    left: 900px;
-    top: 65px;
-}
-header#cabecalho {
-    border-bottom: 1px #606060 solid;
-    height: 150px;
-    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 100px;
-
-}
-header#cabecalho h1 {
-    font-family: FonteLogo, sans-serif;
-    font-size: 30pt;
-    color: #606060;
-    text-shadow: rgba(0,0,0,0.51);
-    margin-bottom: 0px;
-}
-header#cabecalho h2{
-    font-family: 'Titillium Web', sans-serif;
-    color:#808080;
-    font-size: 15pt;
-    text-shadow: black;
-    margin-top: 20px;
-    margin-left: 40px;
-}
-header#cabecalho img#logo {
-    width: 250px;
-    margin-bottom: -20px;
-    margin-left: 30px;
-}
-section#corpo {
-    display: block;
-    padding: 6px;
-}
-section#corpo h1 {
-    font-size: 30px;
-    font-family: 'Encode Sans Semi Condensed', sans-serif;
-    text-align: center;
-}
-section#corpo h2{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
-}
-section#corpo img {
-    width: 1000px;
-    margin: 10px;
-    margin-left: 60px;
-    position: center;
-}
-section#corpo li {
-    padding: 10px;
-    margin: 2px;
-    text-align: center;
-    font-family: 'Poiret One', cursive;
-    font-size: 90px;
-}
-section#corpo ul {
-    list-style: none
-}
-footer#rodape {
-    clear: both;
-    border-top: 1px solid #606060;
-    margin: 1px;
-}
-footer#rodape p {
-        text-align: center;
-}
-footer#rodape img {
-    width: 25px;
-    margin-top: 3px;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <script>
     function mudafoto(foto)
@@ -148,12 +12,12 @@ footer#rodape img {
     }
 </script>
     <body>
-<div id="interface">
-<header id="cabecalho">
-    <h1><img id="logo" alt="logo-impacta" src="http://www.impacta.com.br/landing-page/como-comprar-loja-virtual/img/logo.png"/></h1>
+<div class="interface">
+<header class="cabecalho">
+    <h1><img class="logo" alt="logo-impacta" src="http://www.impacta.com.br/landing-page/como-comprar-loja-virtual/img/logo.png"/></h1>
     <h2>PENSE&nbsp;&nbsp; . &nbsp;&nbsp; SEJA&nbsp;&nbsp; . &nbsp;&nbsp;FAÇA </h2>
-    <img id="icone"alt="logo-impacta2"src="https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg"/>
-    <nav id="menu">
+    <img class="icone" id ="icone" alt="logo-impacta2"src="https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg"/>
+    <nav class="menu">
     <h1>Menu Principal </h1>
     <ul type="1">
         <li onmouseover= "mudafoto('https://litolima.files.wordpress.com/2013/01/faculdade_impacta_horizontal_azul.jpg')" onmouseout="mudafoto('http://www.jjcustomtrade.com.ve/wp-content/uploads/2015/11/Banner-cursos1-1024x382.png')"><a href="index.html"> Home</a></li>
@@ -162,21 +26,21 @@ footer#rodape img {
     </ul>
     </nav>
     </header>
-<section id="corpo">
+<section class="corpo-si">
  <ul>
     <h1>LISTA DE CURSOS</h1>
     <li><a href="Administração.html">ADMINISTRAÇÃO</li>
-    <img id="adm" alt="fotoadm" src="http://www.camboriu.ifc.edu.br/wp-content/uploads/2016/10/Gest%C3%A3o-de-TI.jpg"></a>
+    <img class="adm" alt="fotoadm" src="http://www.camboriu.ifc.edu.br/wp-content/uploads/2016/10/Gest%C3%A3o-de-TI.jpg"></a>
     <li><a href="Sistemas de informação.html">SISTEMAS DE INFORMAÇÃO</li>
-    <img id="si" alt="fotosi" src="http://www.casablancaturismo.com.br/2017/wp-content/uploads/2016/12/tecnologiacb.jpg"/></a>
+    <img class="si" alt="fotosi" src="http://www.casablancaturismo.com.br/2017/wp-content/uploads/2016/12/tecnologiacb.jpg"/></a>
     <li><a href="Rede de computadores.html">REDES</li>
-    <img id="redes" alt="fotoredes" src="http://megasistemas.co/sites/default/files/Instalacion%20de%20redes%20MEGASISTEMAS%20DE%20COLOMBIA.jpg"/></a>
+    <img class="redes" alt="fotoredes" src="http://megasistemas.co/sites/default/files/Instalacion%20de%20redes%20MEGASISTEMAS%20DE%20COLOMBIA.jpg"/></a>
 
 </ul>
 </section>
-<footer id="rodape">
+<footer class="rodape">
  <p><i>&copy; 2017 FACULDADE IMPACTA - TODOS OS DIREITOS RESERVADOS </i><br>
- <a href="https://www.facebook.com/FacImpacta/" target="_blank"> <img id="facebook" src="https://assets.lwsite.com.br/uploads/widget_image/image/718/047/718047/facebook_icon3.png"></a> | <a href="https://twitter.com/impacta_oficial" target="_blank"> <img id="twitter" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-logotipo-do--cone-do-twitter-by-vexels.png"></a>
+ <a href="https://www.facebook.com/FacImpacta/" target="_blank"> <img class="facebook" src="https://assets.lwsite.com.br/uploads/widget_image/image/718/047/718047/facebook_icon3.png"></a> | <a href="https://twitter.com/impacta_oficial" target="_blank"> <img class="twitter" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-logotipo-do--cone-do-twitter-by-vexels.png"></a>
 </footer>
 </div>
 </body>
