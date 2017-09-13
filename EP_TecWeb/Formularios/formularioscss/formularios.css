@@ -1,0 +1,42 @@
+@charset="utf-8";  
+ 
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+    font-family: 'PT Sans', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    display: block;
+    list-style: none;   
+     margin-left: 700px;
+     padding: 11px;
+}
+
+header {
+    background-color: #2826C9;
+    position: fixed;
+    width: 1400px;
+    margin: -15px;
+    height: 67px;
+    margin-bottom: 15px;
+   
+}
+li {    
+    display: inline;
+    text-transform: uppercase;  
+    margin-left: 15px;
+    font-size: 13pt;
+    font-weight: bold;
+    color: white;
+}
+
+form.forms {
+    margin-top: 60px;
+    position: absolute;
+}
