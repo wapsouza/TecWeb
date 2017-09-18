@@ -40,3 +40,10 @@ form.forms {
     margin-top: 60px;
     position: absolute;
 }
+
+form.forms2 {
+        position: absolute;
+        top: 30%;
+        right: 500px;
+        
+}
