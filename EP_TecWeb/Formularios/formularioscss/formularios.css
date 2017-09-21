@@ -2,22 +2,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-/*body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
-    url("D:/Apache24/htdocs/TecWeb/EP_TecWeb/Formularios/Imagens/Fundo_Login.png");
-    background-attachment: fixed;
-    background-size: 100%;
-    background-repeat: no-repeat;
+body {
+    
     font-family: 'PT Sans', sans-serif;
-}*/
-
-div.tran{
-  opacity: 0.4;
-  background-image: url("D:/Apache24/htdocs/TecWeb/EP_TecWeb/Formularios/Imagens/Fundo_Login.png");
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;
 }
+
+.bg-fundo {
+    background-image: url("C:/Users/1700525/Desktop/TecWeb/EP_TecWeb/Formularios/Imagens/Fundo_Login.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+}
+
+
 
 a {
     color: white;
@@ -60,3 +63,11 @@ form.formLogin {
         position: absolute;
         top: 30%;
         right: 750px;
+}
+
+.content-wrapper{
+    z-index: 1; /* ou mais */
+}
+.bg-fundo {
+    z-index: -1;
+}
