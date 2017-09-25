@@ -12,6 +12,11 @@
     }
 </script>
 <body>
+    <!-- 
+            Correção EP2 HTML: 8
+        - DIversas imagens sem alt (-0,5).
+        - Uso incorreto de headings (tem dois H1 na mesma seção) (-1,5)
+    -->
 <div class="interface">
 <header class="cabecalho">
     <h1><img class="logo" src="http://www.impacta.com.br/landing-page/como-comprar-loja-virtual/img/logo.png"/></h1>
@@ -44,11 +49,12 @@ SOBRE A FACULDADE
 </section>
 <aside class="lateral">
     <h1>CAMPUS</h1>
+    <!-- Iframe é um componente perigoso, pesquise sobre o embbed -->
     <iframe width="450" height="315" src="https://www.youtube.com/embed/HM19ZQ-s2Z0?rel=0" frameborder="0" allowfullscreen></iframe>
 <h2>Av. Rudge, 315 - Bom Retiro, São Paulo - SP, 01133-000</h2>
 </aside>
 <footer class="rodape">
- <p><i>&copy; 2017 FACULDADE IMPACTA - TODOS OS DIREITOS RESERVADOS </i><br>
+ <p><i>&copy; 2017 FACULDADE IMPACTA - TODOS OS DIREITOS RESERVADOS </i><br><!-- Não use a tag i -->
  <a href="https://www.facebook.com/FacImpacta/" target="_blank"> <img class="facebook" src="https://assets.lwsite.com.br/uploads/widget_image/image/718/047/718047/facebook_icon3.png"></a> | <a href="https://twitter.com/impacta_oficial" target="_blank"> <img class="twitter" src="https://images.vexels.com/media/users/3/137419/isolated/preview/b1a3fab214230557053ed1c4bf17b46c-logotipo-do--cone-do-twitter-by-vexels.png"></a>
 </footer>
 </div>
