@@ -8,7 +8,7 @@
     text-decoration: none;
 }
  
-/* --- Navegação ---*/ 
+/* --- Navegação ---*/
 section > header > nav {
     width: 100%;
     background-color: #222;
@@ -46,6 +46,11 @@ section > header > nav > ul > li > ul {
     position: absolute;
     width: 195px;
     margin: 57.5px 0px 0px -5px;
+}
+
+section > header > nav > ul > li > ul.Lista_curso {
+    width: 250px;
+    margin: 48px 0px 0px -5px;
 }
 
 section > header > nav > ul > li > ul > li {
