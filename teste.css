@@ -27,10 +27,10 @@ a {
 /* --- menu --- */
 header {
     grid-row: 1;
-    background: blue; 
+    background: blue;
     display: flex;
-    justify-content: space-around;  
-    align-items: center; 
+    justify-content: space-around;
+    align-items: center;
 }
 
 .imagem {
@@ -52,18 +52,30 @@ header {
     align-items: center;
 }
 
+.cabecalho > header > ul > li {
+    display: flex;
+    background: yellow;
+    width: 95px;
+    height: 40px;
+    align-items: center;
+    padding: 0px 0px 0px 5px;
+}
+
 header > ul > li > ul{
     display: none;
     position: absolute;
     background: red;
 }
 
-header > ul > li:hover > ul{
+header > ul > li:hover  ul{
     display: flex;
     flex-direction: column;
     width: 300px;
-    justify-content: space-between;
-    align-items: center;
+    margin: 65px 0px 0 -5px;
+}
+
+header > ul > li:hover > ul > li {
+  padding: 0 0 0 5px;
 }
 /* --- menu --- */
 
