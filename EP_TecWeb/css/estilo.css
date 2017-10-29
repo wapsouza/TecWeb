@@ -60,8 +60,8 @@ section > header > nav > ul > li:hover > a {
 
 section > header > nav > ul > li > ul {
     display: none;
-    background: #191919;
     position: absolute;
+    background: #191919;
     width: 195px;
     margin: 57.5px 0px 0px -5px;
     border-radius: 0px 0px 3px 3px;
@@ -88,6 +88,7 @@ section > header > nav > ul > li > ul > li:hover > a {
 }
 
 section > header > nav > ul > li:hover ul {
+    animation: slide 1s forwards;
     display: block;
 }
 
@@ -147,4 +148,52 @@ footer > img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* ----- ------- */
+
+/* Lista de curso.html */
+.corpo_lista{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.corpo_lista ul {
+  display: flex;
+}
+
+.corpo_lista ul > li {
+  padding: 0px 20px;
+}
+
+.corpo_lista img {
+  width: 340px;
+  height: 200px;
+}
+
+/*  ---- animações ------ */
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translate3d(0, -40%, 0);
+    visibility: visible;
+    opacity: 0;
+    
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
