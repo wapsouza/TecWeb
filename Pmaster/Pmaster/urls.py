@@ -21,5 +21,19 @@ from core.views import *
 
 urlpatterns = [
     url(r'^$',index),
+    url(r'^Index',index),
+    url(r'^Noticias',Noticias),
+    url(r'^Administracao_de_redes',Administracao_de_redes),
+    url(r'^Administracao',Administracao),
+    url(r'^Cadastrar_disciplina',Cadastrar_disciplina),
+    url(r'^Cadastrar_usuario',Cadastrar_usuario),
+    url(r'^Comunicacao_e_expressao',Comunicacao_e_expressao),
+    url(r'^Contato',Contato),
+    url(r'^Lista_de_curso',Lista_de_curso),
+    url(r'^Logica_programacao',Logica_programacao),
+    url(r'^Login',Login),
+    url(r'^Recuperar_senha',Recuperar_senha),
+    url(r'^Sistemas_informacao',Sistemas_informacao),
+    url(r'^Rede_computadores',Rede_computadores),
     url(r'^admin/', admin.site.urls),
 ]
