@@ -10,6 +10,170 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class Aluno(models.Model):
+    ra = models.IntegerField(unique=True)
+    nome = models.CharField(max_length=120)
+    email = models.CharField(max_length=80)
+    celular = models.CharField(max_length=11, blank=True, null=True)
+    sigla_curso = models.CharField(max_length=2, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Aluno'
+
+
+class Arquivosquestao(models.Model):
+    arquivo = models.CharField(unique=True, max_length=500)
+    id_questao = models.ForeignKey('Questao', models.DO_NOTHING, db_column='id_questao')
+
+    class Meta:
+        managed = False
+        db_table = 'ArquivosQuestao'
+
+
+class Curso(models.Model):
+    sigla = models.CharField(max_length=5, blank=True, null=True)
+    nome = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'Curso'
+        unique_together = (('nome', 'sigla'),)
+
+
+class Cursoturma(models.Model):
+    id_turma = models.ForeignKey('Turma', models.DO_NOTHING, db_column='id_turma')
+    id_curso = models.ForeignKey(Curso, models.DO_NOTHING, db_column='id_curso')
+
+    class Meta:
+        managed = False
+        db_table = 'CursoTurma'
+
+
+class Disciplina(models.Model):
+    nome = models.CharField(unique=True, max_length=240)
+    carga_horaria = models.SmallIntegerField()
+    teoria = models.DecimalField(max_digits=3, decimal_places=0)
+    pratica = models.DecimalField(max_digits=3, decimal_places=0)
+    ementa = models.TextField(blank=True, null=True)  # This field type is a guess.
+    competencias = models.TextField(blank=True, null=True)  # This field type is a guess.
+    habilidades = models.TextField(blank=True, null=True)  # This field type is a guess.
+    conteudo = models.TextField(blank=True, null=True)  # This field type is a guess.
+    biografia_basica = models.TextField(blank=True, null=True)  # This field type is a guess.
+    biografia_complementar = models.TextField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'Disciplina'
+
+
+class Disciplinaofertada(models.Model):
+    ano = models.SmallIntegerField(blank=True, null=True)
+    semestre = models.CharField(max_length=1, blank=True, null=True)
+    id_disciplina = models.ForeignKey(Disciplina, models.DO_NOTHING, db_column='id_disciplina')
+
+    class Meta:
+        managed = False
+        db_table = 'DisciplinaOfertada'
+        unique_together = (('ano', 'semestre'),)
+
+
+class Gradecurricular(models.Model):
+    ano = models.SmallIntegerField(blank=True, null=True)
+    semestre = models.CharField(max_length=1)
+    id_curso = models.ForeignKey(Curso, models.DO_NOTHING, db_column='id_curso')
+
+    class Meta:
+        managed = False
+        db_table = 'GradeCurricular'
+        unique_together = (('ano', 'semestre'),)
+
+
+class Matricula(models.Model):
+    id_turma = models.ForeignKey('Turma', models.DO_NOTHING, db_column='id_turma')
+    id_aluno = models.ForeignKey(Aluno, models.DO_NOTHING, db_column='id_aluno')
+
+    class Meta:
+        managed = False
+        db_table = 'Matricula'
+
+
+class Periodo(models.Model):
+    numero = models.SmallIntegerField(unique=True, blank=True, null=True)
+    id_gradecurricular = models.ForeignKey(Gradecurricular, models.DO_NOTHING, db_column='id_gradecurricular')
+
+    class Meta:
+        managed = False
+        db_table = 'Periodo'
+
+
+class Periododisciplina(models.Model):
+    id_periodo = models.ForeignKey(Periodo, models.DO_NOTHING, db_column='id_periodo')
+    id_disciplina = models.ForeignKey(Disciplina, models.DO_NOTHING, db_column='id_disciplina')
+
+    class Meta:
+        managed = False
+        db_table = 'PeriodoDisciplina'
+
+
+class Professor(models.Model):
+    ra = models.IntegerField()
+    apelido = models.CharField(max_length=30)
+    nome = models.CharField(max_length=120)
+    email = models.CharField(max_length=80)
+    celular = models.CharField(max_length=11, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'Professor'
+        unique_together = (('apelido', 'ra'),)
+
+
+class Questao(models.Model):
+    numero = models.IntegerField(unique=True)
+    data_limite_entrega = models.CharField(max_length=10, blank=True, null=True)
+    descricao = models.TextField(blank=True, null=True)  # This field type is a guess.
+    data = models.CharField(max_length=10, blank=True, null=True)
+    id_turma = models.ForeignKey('Turma', models.DO_NOTHING, db_column='id_turma')
+
+    class Meta:
+        managed = False
+        db_table = 'Questao'
+
+
+class Resposta(models.Model):
+    ra_aluno = models.IntegerField(unique=True)
+    data_avaliacao = models.CharField(max_length=10, blank=True, null=True)
+    nota = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
+    avaliacao = models.TextField(blank=True, null=True)  # This field type is a guess.
+    descricao = models.TextField(blank=True, null=True)  # This field type is a guess.
+    data_de_envio = models.CharField(max_length=10, blank=True, null=True)
+    id_questao = models.ForeignKey(Questao, models.DO_NOTHING, db_column='id_questao')
+
+    class Meta:
+        managed = False
+        db_table = 'Resposta'
+
+
+class Turma(models.Model):
+    turno = models.CharField(max_length=15)
+    id_professor = models.ForeignKey(Professor, models.DO_NOTHING, db_column='id_professor')
+    id_disciplinaofertada = models.ForeignKey(Disciplinaofertada, models.DO_NOTHING, db_column='id_disciplinaofertada')
+
+    class Meta:
+        managed = False
+        db_table = 'Turma'
+
+
+class Arquivosresposta(models.Model):
+    arquivo = models.CharField(unique=True, max_length=500, blank=True, null=True)
+    id_resposta = models.ForeignKey(Resposta, models.DO_NOTHING, db_column='id_resposta')
+
+    class Meta:
+        managed = False
+        db_table = 'arquivosresposta'
+
+
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
@@ -118,14 +282,3 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-
-
-class Teste(models.Model):
-    nome = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.nome
-
-    class Meta:
-        managed = False
-        db_table = 'teste'

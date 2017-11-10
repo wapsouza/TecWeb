@@ -18,7 +18,7 @@ create table Disciplina (
     biografia_complementar text,
 
     constraint id_disciplina primary key (id),
-	constraint uq_nome unique(nome)
+	 constraint uq_nome unique(nome)
 );
 go
 create table Curso (
