@@ -21,6 +21,9 @@ class Aluno(models.Model):
         managed = False
         db_table = 'Aluno'
 
+    def __str__(self):
+        return self.nome
+
 
 class Arquivosquestao(models.Model):
     arquivo = models.CharField(unique=True, max_length=500)
@@ -39,6 +42,9 @@ class Curso(models.Model):
         managed = False
         db_table = 'Curso'
         unique_together = (('nome', 'sigla'),)
+
+    def __str__(self):
+        return self.nome
 
 
 class Cursoturma(models.Model):
@@ -65,6 +71,9 @@ class Disciplina(models.Model):
     class Meta:
         managed = False
         db_table = 'Disciplina'
+
+    def __str__(self):
+        return self.nome
 
 
 class Disciplinaofertada(models.Model):
@@ -127,6 +136,9 @@ class Professor(models.Model):
         managed = False
         db_table = 'Professor'
         unique_together = (('apelido', 'ra'),)
+
+    def __str__(self):
+        return self.nome
 
 
 class Questao(models.Model):
