@@ -106,7 +106,7 @@ go
 
 create table Turma (
 	id int IDENTITY(1,1) not null,
-	turno varchar(15) not null not null,
+	turno varchar(15) not null,
 	id_professor int not null,
 	id_disciplinaofertada int not null,
 
